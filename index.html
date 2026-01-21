@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCA Canvas Portal</title>
+    <style>
+        /* 1. THE BACKGROUND IMAGE */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            /* CHANGE BACKGROUND HERE: Replace the URL below with your image link */
+            background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=3870&auto=format&fit=crop');
+            background-size: cover;       /* Ensures image covers the whole screen */
+            background-position: center;  /* Centers the image */
+            background-repeat: no-repeat;
+            
+            /* Adds a dark overlay so text pops */
+            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); 
+        }
+
+        /* The Main Container */
+        .portal-container {
+            text-align: center;
+            z-index: 2; /* Sits on top of the background */
+        }
+
+        .main-title {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+        }
+
+        /* 2. THE GRID (This holds the separate boxes) */
+        .card-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap; /* Stacks them on mobile */
+            justify-content: center;
+        }
+
+        /* 3. THE SEPARATE BOXES */
+        .login-box {
+            background: rgba(255, 255, 255, 0.95); /* Slight transparency */
+            width: 240px;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-decoration: none; /* Removes underline from links */
+            color: #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 5px solid transparent;
+        }
+
+        /* Hover Effect: Moves up slightly */
+        .login-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            border-bottom: 5px solid #1f407a; /* UNCA Blue Line on hover */
+        }
+
+        /* 4. THE ICONS */
+        .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .box-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #1f407a; /* UNCA Blue Text */
+        }
+
+        .box-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        .footer {
+            color: rgba(255,255,255, 0.7);
+            margin-top: 40px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portal-container">
+        
+        <h1 class="main-title">Select Your Login</h1>
+
+        <div class="card-grid">
+
+            <a href="https://unca.instructure.com/login/saml" class="login-box">
+                <div class="icon">🎓</div> <div class="box-title">UNCA Login</div>
+                <div class="box-desc">For current Students, Faculty, and Staff.</div>
+            </a>
+
+            <a href="https://unca.instructure.com/login/canvas" class="login-box">
+                <div class="icon">👥</div>
+                <div class="box-title">Guest Login</div>
+                <div class="box-desc">For Parents, Auditors, and External Partners.</div>
+            </a>
+
+            <a href="mailto:helpdesk@unca.edu" class="login-box">
+                <div class="icon">🛠️</div>
+                <div class="box-title">Need Help?</div>
+                <div class="box-desc">Contact the CTL or IT Support team.</div>
+            </a>
+
+        </div>
+
+        <div class="footer">
+            &copy; 2026 UNC Asheville | Center for Teaching & Learning
+        </div>
+
+    </div>
+
+</body>
+</html>
